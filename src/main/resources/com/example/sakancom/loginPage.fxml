@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sakancom.LoginController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="197.0" fitWidth="243.0" layoutX="33.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/232861672_875495513084946_7791401921275605291_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView glyphName="USERS" layoutX="112.0" layoutY="136.0" size="5em" />
+            <TextField fx:id="userName" layoutX="68.0" layoutY="219.0" promptText="User Name" style="-fx-background-color: transperant; -fx-border-width: 0px 0px 2px 0px 0px 0px 2px 0px; -fx-border-color: black;" />
+            <FontAwesomeIconView glyphName="USER" layoutX="37.0" layoutY="243.0" size="2em" />
+            <FontAwesomeIconView glyphName="KEY" layoutX="34.0" layoutY="287.0" size="2em" />
+            <Button layoutX="110.0" layoutY="339.0" mnemonicParsing="false" onAction="#onLogin" text="Login" />
+            <Hyperlink layoutX="76.0" layoutY="395.0" onAction="#Signup" text="Create new account?" />
+            <PasswordField fx:id="Password" layoutX="67.0" layoutY="264.0" promptText="Password" style="-fx-background-color: transpernat; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px;" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

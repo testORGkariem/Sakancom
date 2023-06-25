@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sakancom.Owner">
+   <children>
+      <Label layoutX="300.0" layoutY="23.0" prefHeight="27.0" prefWidth="85.0" text="Owner" />
+      <Button layoutX="281.0" layoutY="157.0" mnemonicParsing="false" onAction="#onSignout" text="signout" />
+   </children>
+</AnchorPane>
