@@ -12,7 +12,7 @@ public class SakancomApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SakancomApplication.class.getResource("loginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 550);
-        stage.setTitle("Hello!");
+        stage.setTitle("Sakancom");
         stage.setScene(scene);
         stage.show();
     }

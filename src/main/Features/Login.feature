@@ -63,13 +63,24 @@
 
     Scenario: successful registration as a tenant
         Given user wants to register as a tenant
-        And fills all the information, and the username is available
+        And fill in all or some of the information, and the username is available
         Then registration complete and the account is created
         And the tenant can login to his new account
 
-    Scenario: fail registration as a tenant
+    Scenario: registration fail as a tenant
       Given user wants to register as a tenant
-      And fills all the information, and the username is username is unavailable
+      And fill in all or some of the information, and the username is username is unavailable
       Then registration fails and error appears
       And the tenant can login to his new account
 
+    Scenario: successful registration as a owner
+      Given user wants to register as a owner
+      And fill in all or some of the information, and the username is available
+      Then registration complete and the account is created
+      And the owner can login to his new account
+
+    Scenario: registration fail as a owner
+      Given user wants to register as a owner
+      And fill in all or some of the information, and the username is username is unavailable
+      Then registration fails and error appears
+      And the owner can login to his new account
