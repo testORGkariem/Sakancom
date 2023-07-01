@@ -42,4 +42,4 @@
       Given user wants to signup as a tenant or owner
       And fill in all or some of the information, and the username is username is unavailable
       Then registration fails and error appears
-      And Account not created and stay in login page
+      And Account not created and stay in login page.
