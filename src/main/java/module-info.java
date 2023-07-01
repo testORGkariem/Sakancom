@@ -1,9 +1,10 @@
 module com.example.sakancom {
-    requires javafx.controls;
-    requires javafx.fxml;
     requires java.sql;
+    requires junit;
+    requires io.cucumber.junit;
+    requires io.cucumber.java;
 
 
-    opens com.example.sakancom to javafx.fxml;
-    exports com.example.sakancom;
+    opens Sakancom.loginFeature;
+    exports Sakancom.loginFeature;
 }
