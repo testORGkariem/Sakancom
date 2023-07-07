@@ -1,14 +1,12 @@
 package Sakancom.loginFeature;
 
 import java.sql.*;
-import java.util.Scanner;
-
-import static java.sql.DriverManager.println;
 import static org.junit.Assert.*;
 
 public class loginEntity {
 
     boolean Owner = false;
+    boolean reg = false;
     boolean Tenant = false;
     boolean adminUsername, adminPassword,adminFlag;
     String host = "localhost";
@@ -36,15 +34,12 @@ public class loginEntity {
                     if(adminUsername)
                     {
                         adminFlag = true;
-                        assertTrue(true);
                         return true;
                     }
                 }
             }
             else {
                 fail();
-                assertFalse(false);
-
             }
         } catch (SQLException e) {
             //throw new RuntimeException(e);
@@ -71,33 +66,19 @@ public class loginEntity {
         System.out.println("_____________________________________________");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the MySQL database!");
-            Statement statement = connection.createStatement();
-            String query = "select * from login where username = '"+OwUser+"'and password = '"+OwPass+"'";
-            ResultSet resultSet= statement.executeQuery(query);
-            if(resultSet.next())
-            {
-                assertTrue(true);
-                return false;
-            }
-            else {
-                statement.executeQuery(query);
-                Statement statement2 = connection.createStatement();
-                String query2 = "insert into login (username, password, role) values ('"+OwUser+"', '"+OwPass+"', '"+owner+"')";
-                statement2.executeUpdate(query2);
-                Statement statement3 = connection.createStatement();
-                String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('"+Fname+"', '"+Mname+"', '"+Lname+"', '"+Phone + "', '"+Owemail+"', '"+age+"', '"+OwUser+"', '"+OwPass+"', '"+owner+"')";
-                statement3.executeUpdate(query3);
-                System.out.println("Creating Owner Account...");
-                System.out.println("_____________________________________________");
-                Owner = true;
-            }
+            Statement statement2 = connection.createStatement();
+            String query2 = "insert into login (username, password, role) values ('"+OwUser+"', '"+OwPass+"', '"+owner+"')";
+            statement2.executeUpdate(query2);
+            Statement statement3 = connection.createStatement();
+            String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('"+Fname+"', '"+Mname+"', '"+Lname+"', '"+Phone + "', '"+Owemail+"', '"+age+"', '"+OwUser+"', '"+OwPass+"', '"+owner+"')";
+            statement3.executeUpdate(query3);
+            System.out.println("Creating Owner Account...");
+            System.out.println("_____________________________________________");
+            Owner = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        if (Owner)
-            return true;
-        else
-            return false;
+        return Owner;
     }
 
     public boolean printTenant( String FFname, String MMname, String LLname, String PPhone, String tenemail, String Age, String Reg_num, String major, String tenUser, String tenPass) {
@@ -116,34 +97,20 @@ public class loginEntity {
         System.out.println("_____________________________________________");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the MySQL database!");
-            Statement statement = connection.createStatement();
-            String query = "select * from login where username = '"+tenUser+"'and password = '"+tenPass+"'";
-            ResultSet resultSet= statement.executeQuery(query);
-            if(resultSet.next())
-            {
-                assertTrue(true);
-                return false;
+            Statement statement3 = connection.createStatement();
+            String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+tenant+"')";
+            statement3.executeUpdate(query3);
+            Statement statement4 = connection.createStatement();
+            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + FFname + "', '" + MMname + "', '" + LLname + "', '" + PPhone + "', '" + tenemail + "', '" + Age + "', '" + Reg_num + "', '" + major + "', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
+            statement4.executeUpdate(query4);
+            System.out.println("Creating Tenant Account...");
+            System.out.println("_____________________________________________");
+            Tenant = true;
             }
-            else
-            {
-                Statement statement3 = connection.createStatement();
-                String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+tenant+"')";
-                statement3.executeUpdate(query3);
-                Statement statement4 = connection.createStatement();
-                String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + FFname + "', '" + MMname + "', '" + LLname + "', '" + PPhone + "', '" + tenemail + "', '" + Age + "', '" + Reg_num + "', '" + major + "', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
-                statement4.executeUpdate(query4);
-                System.out.println("Creating Tenant Account...");
-                System.out.println("_____________________________________________");
-                assertTrue(true);
-                Tenant = true;
-            }
-        } catch (SQLException e) {
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        if (Tenant)
-            return true;
-        else
-            return false;
+        return Tenant;
     }
     public void logout()
     {
@@ -156,7 +123,34 @@ public class loginEntity {
         System.out.println("_____________________________________________");
         System.out.println("___________Logged out Successfully___________");
         System.out.println("_____________________________________________");
-        assertTrue(true);
     }
+    public boolean failureReg(String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass) {
+        System.out.println("________________Signup as Tenant________________");
+        String tenant = "tenant";
+        System.out.println("Please enter your First name: "+FFname+"\n");
+        System.out.println("Please enter your Middle name name: "+MMname+"\n");
+        System.out.println("Please enter your Last name: "+LLname+"\n");
+        System.out.println("Please enter your Phone number: "+PPhone+"\n");
+        System.out.println("Please enter your Email: "+tenmail+"\n");
+        System.out.println("Please enter your age: "+Age+"\n");
+        System.out.println("Please enter your Registration number: "+Reg_num+"\n");
+        System.out.println("Please enter your major: "+major+"\n");
+        System.out.println("Please enter your username: "+tenUser+"\n");
+        System.out.println("Please enter your password: "+tenPass+"\n");
+        System.out.println("_____________________________________________");
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Connected to the MySQL database!");
+            Statement statement = connection.createStatement();
+            String query = "select * from login where username = '"+tenUser+"'and password = '"+tenPass+"'";
+            ResultSet resultSet = statement.executeQuery(query);
+            if (resultSet.next()) {
+                reg = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return reg;
+    }
+
 }
 

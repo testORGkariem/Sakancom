@@ -93,7 +93,7 @@ public class loginFeatureSteps {
             }
             if(ownerFlag&& !tenantFlag)
             {
-                fail();
+                assertFalse(true);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -107,7 +107,7 @@ public class loginFeatureSteps {
             assertTrue(true);
         else
         {
-            fail();
+            assertFalse(true);
         }
     }
     @Given("tenant or owner login to the system")
@@ -131,7 +131,7 @@ public class loginFeatureSteps {
             {
                 tenantFlag = true;
                 ownerFlag = true;
-                fail();
+                assertFalse(true);
             }
             else
             {
@@ -150,23 +150,16 @@ public class loginFeatureSteps {
         assertTrue(true);
     }
     @Given("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and both usernames is available")
-    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeRegNumMajorTenUserTenPassForTenantAndBothUsernamesIsAvailable(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass) {
-       flag = false;
-       if(obj.printTenant(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass)||obj.printOwner(Fname, Mname, Lname, Phone, Owemail, age, OwUser, OwPass))
-       {
-           assertTrue(true);
-           flag = true;
-
-       }
+    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeRegNumMajorTenUserTenPassForTenantAndBothUsernamesIsAvailable(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass)
+    {
+       obj.printTenant(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass);
+       obj.printOwner(Fname, Mname, Lname, Phone, Owemail, age, OwUser, OwPass);
     }
     @Then("registration complete and the account is created")
     public void registration_complete_and_the_account_is_created() {
-       if(flag)
-       {
            System.out.println("_________Account Created Successfully________");
            System.out.println("_____________________________________________");
            assertTrue(true);
-       }
     }
     @Given("user wants to signup as a tenant or owner")
     public void user_wants_to_signup_as_a_tenant_or_owner()
@@ -176,7 +169,7 @@ public class loginFeatureSteps {
     @Given("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and usernames isn't available")
     public void first_name_second_name_lastname_phone_email_age_ow_user_ow_pass_for_owner_and_first_name_second_name_lastname_phone_email_age_reg_num_major_ten_user_ten_pass_for_tenant_and_usernames_isn_t_available(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass)
     {
-        assertFalse(obj.printTenant(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass)&&obj.printOwner(Fname, Mname, Lname, Phone, Owemail, age, OwUser, OwPass));
+        assertTrue(obj.failureReg(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass));
     }
     @Then("registration fails and error appears")
     public void registration_fails_and_error_appears() {
