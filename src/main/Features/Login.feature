@@ -18,12 +18,12 @@
 
     Scenario: successful registration as a tenant or owner
         Given user wants to register as a tenant or owner
-        And fill in all or some of the information, and the username is available
+        And first name  = "Ahmad", second name = "mohammed", lastname = "AbuAishe", Phone="0593220265", email = "Ahmadmohammed@gmail.com", age ="21", OwUser = "Ahmad mohammed", OwPass = "11223344" for owner and first name  = "Ahmad", second name = "Sameer", lastname = "AbuAishe", Phone="0593220260", email = "Ahmadasameer@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "Ahmad sameer", tenPass = "1234" for tenant and both usernames is available
         Then registration complete and the account is created
 
     Scenario: registration fail as a tenant or owner
       Given user wants to signup as a tenant or owner
-      And fill in all or some of the information, and the username is username is unavailable
+      And first name  = "Ahmad", second name = "mohammed", lastname = "AbuAishe", Phone="0593220265", email = "Ahmadmohammed@gmail.com", age ="21", OwUser = "Ahmad mohammed", OwPass = "11223344" for owner and first name  = "Ahmad", second name = "Sameer", lastname = "AbuAishe", Phone="0593220260", email = "Ahmadasameer@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "Ahmad sameer", tenPass = "1234" for tenant and usernames isn't available
       Then registration fails and error appears
 
       Scenario: admin, tenant or owner want to logout

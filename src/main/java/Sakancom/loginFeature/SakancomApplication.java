@@ -20,17 +20,17 @@ public class SakancomApplication{
                 System.out.println("\n******* Login Page *******\n");
                 loginEntity in=new loginEntity();
 
-                String role= in.checkValues();
-                if(role.equals("tenant")){
-                    tenantEntity e=new tenantEntity();
+               // String role= in.checkValues();
+                //if(role.equals("tenant")){
+                    //tenantEntity e=new tenantEntity();
 
-                    e.Start();
-                }
-                else if(role.equals("owner")){
-                }
-                else if (role.equals("admin")) {
-
-                }
+                    //e.Start();
+                //}
+                //else if(role.equals("owner")){
+                //}
+                //else if (role.equals("admin")) {
+//
+               // }
 
                 System.out.println("_____________________________________________");
 
