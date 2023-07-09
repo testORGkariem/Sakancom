@@ -49,6 +49,7 @@ public class loginFeatureSteps {
         ownerFlag = false;
         try (Connection connection = DriverManager.getConnection(url, username, password))
         {
+
             System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = "Select * from login where username = '"+USERNAME+"' and password = '"+PASSWORD+"'";
