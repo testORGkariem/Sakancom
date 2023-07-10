@@ -21,6 +21,7 @@ public class ownerEntity {
     String username = "root";
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+    String UserName,Password,Role;
 
     public String addResidence(String ownerUsername, String description, String services, String price, String balcony, String numOfBathrooms, int floors, String residenceName) throws SQLException {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -42,54 +43,44 @@ public class ownerEntity {
         return null;
     }
 
-    public boolean ownerLoggedIn(String Username, String Password) {
-        System.out.println("_____________________________________________");
-        System.out.println("Choose from the following ");
-        System.out.println("1-Login");
-        System.out.println("2-Signup");
-        System.out.print("The Value: ");
-        System.out.println("_____________________________________________");
-        System.out.println("Username: '"+Username+"'");
-        System.out.println("Password: '"+Password+"'");
+    public  String checkValues(String UserName,String Password) {
+
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
-            String query = "Select * from login where username = '"+Username+"'";
-            ResultSet resultSet = statement.executeQuery(query);
-            if (resultSet.next()) {
-                if (Username.equals(resultSet.getString("username"))) {
-                    ownerUsername = true;
-                }
-                if (Password.equals(resultSet.getString("password"))) ;
-                {
-                    ownerPassword = true;
-                    if (ownerUsername) {
-                        ownerFlag = true;
+            if (UserName.isEmpty() == true || Password.isEmpty() == true) {
+            } else {
+                int flag = 0;
+                String query = "SELECT * FROM login where username='" + UserName + "'" + " and password='" + Password + "'";
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    flag = 1;
+                    if (resultSet.getString(3).equals("tenant")) {
+                        Role=new String("tenant");
+                        return Role;
+                    } else if (resultSet.getString(3).equals("admin")) {
+                        Role=new String("admin");
+                        return Role;
+                    } else if (resultSet.getString(3).equals("owner")) {
+                        Role=new String("owner");
+                        return Role;
+                    } else {
+                        Role=new String("null");
+                        return Role;
                     }
                 }
-            } else {
-                fail();
+                if (flag == 0) {
+                    Role=new String("null");
+                    return Role;
+                }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (Exception ex) {
         }
-        return ownerFlag;
+        return Role;
     }
 
     public void ownerDashboard(String Username)
     {
-        System.out.println("_____________________________________________");
-        System.out.println("____________Welcome '"+Username+"'___________");
-        System.out.println("Choose from the following ");
-        System.out.println("1-Housing ");
-        System.out.println("2-Logout ");
-        System.out.println("_____________________________________________");
-        System.out.println("___________________Housing___________________ ");
-        System.out.println("1-Add Residence ");
-        System.out.println("2-Show Residences ");
-        System.out.println("__________________Residences_________________ ");
         try (Connection connection = DriverManager.getConnection(url, username, password)){
-            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = "Select * from departments";
             ResultSet resultSet = statement.executeQuery(query);

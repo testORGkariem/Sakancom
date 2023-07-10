@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="Login feature version 1.0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/Features/admin.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatures/AcceptanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatures/adminEntity.java" afterDir="false" />
+    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="add residence feature version 0.0.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/Login.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Features/addResidences.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/addResidences.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/admin.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/admin.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerFeatureSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginFeatureSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,25 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: addResidences" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/addResidences.feature" />
-      <option name="GLUE" value="Sakancom.OwnerFeatures" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Sakancom" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: addResidences" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: Check if owner logged in and selected add residence option" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/addResidences.feature" />
@@ -165,15 +145,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: admin can login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: owner wants to add picture or location and information or services or price or contact information to the residence" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/Login.feature" />
-      <option name="GLUE" value="Sakancom.loginFeature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/addResidences.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakancom" />
-      <option name="NAME_FILTER" value="^admin can login$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^admin can login$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: admin can login" />
+      <option name="NAME_FILTER" value="^owner wants to add picture or location and information or services or price or contact information to the residence$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^owner wants to add picture or location and information or services or price or contact information to the residence$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: owner wants to add picture or location and information or services or price or contact information to the residence" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -185,14 +164,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: owner wants to add picture or location and information or services or price or contact information to the residence" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: registration fail as a tenant or owner" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/addResidences.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/Login.feature" />
+      <option name="GLUE" value="Sakancom.loginFeature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakancom" />
-      <option name="NAME_FILTER" value="^owner wants to add picture or location and information or services or price or contact information to the residence$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^owner wants to add picture or location and information or services or price or contact information to the residence$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: owner wants to add picture or location and information or services or price or contact information to the residence" />
+      <option name="NAME_FILTER" value="^registration fail as a tenant or owner$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^registration fail as a tenant or owner$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: registration fail as a tenant or owner" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: successful registration as a tenant or owner" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/Login.feature" />
+      <option name="GLUE" value="Sakancom.loginFeature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Sakancom" />
+      <option name="NAME_FILTER" value="^successful registration as a tenant or owner$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^successful registration as a tenant or owner$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: successful registration as a tenant or owner" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -237,10 +237,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AcceptanceTest" />
+        <item itemvalue="Cucumber Java.Scenario: successful registration as a tenant or owner" />
+        <item itemvalue="Cucumber Java.Scenario: registration fail as a tenant or owner" />
         <item itemvalue="Cucumber Java.Scenario: Check if owner logged in and selected add residence option" />
         <item itemvalue="Cucumber Java.Scenario: owner wants to add picture or location and information or services or price or contact information to the residence" />
-        <item itemvalue="Cucumber Java.Feature: addResidences" />
-        <item itemvalue="Cucumber Java.Scenario: admin can login" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +282,9 @@
       <workItem from="1688811661809" duration="2803000" />
       <workItem from="1688848701631" duration="5549000" />
       <workItem from="1688895960066" duration="2881000" />
-      <workItem from="1688930844609" duration="335000" />
+      <workItem from="1688930844609" duration="3676000" />
+      <workItem from="1688972266145" duration="94000" />
+      <workItem from="1688980848816" duration="3793000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1687624994338</created>
@@ -354,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688752928492</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add residence feature version 0.0.2">
+      <created>1688931207646</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688931207646</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,13 +390,17 @@
     <MESSAGE value="Login feature version 0.0.5." />
     <MESSAGE value="Login feature version 1.0.0" />
     <MESSAGE value="Login feature version 1.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login feature version 1.0.1" />
+    <MESSAGE value="add residence feature version 0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add residence feature version 0.0.2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sakancom$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688899836714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakancom$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688983476085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Sakancom.loginFeature.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sakancom$Scenario__successful_login.ic" NAME="Scenario: successful login Coverage Results" MODIFIED="1688486256085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>io.cucumber.core.cli.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sakancom$Scenario__successful_registration_as_a_tenant_or_owner.ic" NAME="Scenario: successful registration as a tenant or owner Coverage Results" MODIFIED="1688983023748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
   </component>
