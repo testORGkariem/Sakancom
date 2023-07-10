@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="login feature 1.0.3 and add residence feature version 0.0.3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/AcceptanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/ControlPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/Furniture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/bookingFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/housingEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/housingFeature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantFeatures/tenantEntity.java" afterDir="false" />
+    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="ownerFeature 1.0.0 with main edited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Features/addResidences.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/addResidences.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/OwnerFeatures/ownerFeatureSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/SakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/SakancomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginFeatureSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/tenantEntity.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +273,7 @@
       <workItem from="1688930844609" duration="3676000" />
       <workItem from="1688972266145" duration="94000" />
       <workItem from="1688980848816" duration="4994000" />
-      <workItem from="1688986665429" duration="7522000" />
+      <workItem from="1688986665429" duration="7618000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1687624994338</created>
@@ -372,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688984762018</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ownerFeature 1.0.0 with main edited">
+      <created>1689026661962</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689026661962</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +395,8 @@
     <MESSAGE value="Login feature version 1.0.1" />
     <MESSAGE value="add residence feature version 0.0.2" />
     <MESSAGE value="login feature 1.0.3 and add residence feature version 0.0.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="login feature 1.0.3 and add residence feature version 0.0.3" />
+    <MESSAGE value="ownerFeature 1.0.0 with main edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="ownerFeature 1.0.0 with main edited" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakancom$AcceptanceTest__1_.ic" NAME="AcceptanceTest (1) Coverage Results" MODIFIED="1689018243788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

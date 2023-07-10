@@ -128,7 +128,7 @@ public class SakancomApplication{
                         System.out.println("2-Show Residences ");
                         System.out.print("The Value : ");
                         Scanner inp1 = new Scanner(System.in);
-                        int input2 = i.nextInt();
+                        int input2 = inp1.nextInt();
                         if(input2 == 1)
                         {
                             System.out.println("________________Add Residence________________");
