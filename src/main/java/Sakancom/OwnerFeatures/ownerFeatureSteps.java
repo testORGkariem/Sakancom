@@ -41,16 +41,23 @@ public class ownerFeatureSteps {
 
 
 
-    @Given("owner is logged in")
-    public void ownerIsLoggedIn() {
-        assertTrue(true);//should be modified
+    @Given("owner is logged in with username {string} and  password {string}")
+    public void ownerIsLoggedInWithUsernameAndPassword(String username, String password) {
+        if(obj.checkValues(username,password).equals("owner")){
+            assertTrue(true);
+            ownerFlag = true;
+        }
     }
-    @Given("adding to the residence options appears and owner enters {string} as username of owner  and {string} as a residence description and {string} as a services and {string} as number of bathrooms and {string} as it have a balcony and {string} as a price and {string} as residence name")
-    public void adding_to_the_residence_options_appears_and_owner_enters_as_username_of_owner_and_as_a_residence_description_and_as_a_services_and_as_number_of_bathrooms_and_as_it_have_a_balcony_and_as_a_price_and_as_residence_name(String Username, String description, String services, String numOfbBathrooms, String balcony, String price, int floors, String residenceName) throws SQLException {
+
+
+
+    @Given("adding to the residence options appears and owner enters {string} as username of owner  and {string} as a residence description and {string} as a services and {string} as number of bathrooms and {string} as it have a balcony and {string} as a price and and {int} as floors {string} as residence name")
+    public void adding_to_the_residence_options_appears_and_owner_enters_as_username_of_owner_and_as_a_residence_description_and_as_a_services_and_as_number_of_bathrooms_and_as_it_have_a_balcony_and_as_a_price_and_and_as_floors_as_residence_name(String Username, String description, String services, String numOfbBathrooms, String balcony, String price, Integer floors, String residenceName) throws SQLException {
         obj.addResidence(Username, description, services, numOfbBathrooms, balcony, price, floors, residenceName);
     }
     @Then("residence added successfully")
     public void residenceAddedSuccessfully() {
-        //search on the database for the added residence
+        obj.ownerDashboard();
     }
+
 }

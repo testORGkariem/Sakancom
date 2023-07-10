@@ -43,10 +43,12 @@ public class loginFeatureSteps {
         ownerFlag = false;
     }
     @Given("enters {string} as a username and {string} as a password and both are correct")
-    public void enters_as_a_username_and_as_a_password_and_both_are_correct(String USERNAME, String PASSWORD) {
+    public void enters_as_a_username_and_as_a_password_and_both_are_correct(String USERNAME, String PASSWORD)
+    {
         tenantFlag = false;
         ownerFlag = false;
-        if(obj.checkValues(USERNAME,PASSWORD).equals("tenant")||obj.checkValues(USERNAME,PASSWORD).equals("owner")){
+        if(obj.checkValues(USERNAME,PASSWORD).equals("tenant")||obj.checkValues(USERNAME,PASSWORD).equals("owner"))
+        {
             assertTrue(true);
             tenantFlag = true;
             ownerFlag = true;

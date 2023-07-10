@@ -22,6 +22,7 @@ public class ownerEntity {
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String UserName,Password,Role;
+    String owner_username, description, services, price, balcony, numOfBathrooms, floors, residenceName;
 
     public String addResidence(String ownerUsername, String description, String services, String price, String balcony, String numOfBathrooms, int floors, String residenceName) throws SQLException {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -33,7 +34,7 @@ public class ownerEntity {
             File file = jfc.getSelectedFile();
             FileInputStream fis = new FileInputStream(file);
             statement.setInt(1, 1);
-            statement.setBinaryStream(2, fis, fis.available());
+            statement.setBinaryStream(1, fis, fis.available());
             statement.executeUpdate();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -78,19 +79,21 @@ public class ownerEntity {
         return Role;
     }
 
-    public void ownerDashboard(String Username)
+    public boolean ownerDashboard()
     {
         try (Connection connection = DriverManager.getConnection(url, username, password)){
             Statement statement = connection.createStatement();
-            String query = "Select * from departments";
+            String query = "Select * from department";
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
                 System.out.println(resultSet.getString("residenceName"));
                 System.out.println("    ");
                 System.out.println(resultSet.getString("rent_price"));
+                return true;
             }
         } catch (SQLException e){
             throw new RuntimeException(e);
         }
+        return false;
     }
 }
