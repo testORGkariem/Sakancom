@@ -24,7 +24,7 @@ public class ownerEntity {
     String UserName,Password,Role;
     String owner_username, description, services, price, balcony, numOfBathrooms, floors, residenceName;
 
-    public String addResidence(String ownerUsername, String description, String services, String price, String balcony, String numOfBathrooms, int floors, String residenceName) throws SQLException {
+    public String addHousing(String ownerUsername, String description, String services, String price, String balcony, String numOfBathrooms, int floors, String residenceName) throws SQLException {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the MySQL database!");
             String query = "insert into department (username_of_owner, residence_location_desc, services, rent_price, balcony, num_of_bathrooms, pic_file, floors, residenceName) values ('"+ownerUsername+"', '"+description+"', '"+services+"', '"+price+"', '"+balcony+"', '"+numOfBathrooms+"', ?, '"+floors+"', '"+residenceName+"')";
@@ -79,11 +79,29 @@ public class ownerEntity {
         return Role;
     }
 
-    public boolean ownerDashboard()
+    public boolean showHousings()
     {
         try (Connection connection = DriverManager.getConnection(url, username, password)){
             Statement statement = connection.createStatement();
-            String query = "Select * from department";
+            String query = "Select * from housing";
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()){
+                System.out.println(resultSet.getString("residenceName"));
+                System.out.println("    ");
+                System.out.println(resultSet.getString("rent_price"));
+                return true;
+            }
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
+    public boolean checkHousings()
+    {
+        try (Connection connection = DriverManager.getConnection(url, username, password)){
+            Statement statement = connection.createStatement();
+            String query = "Select * from housing where departmentName ";
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
                 System.out.println(resultSet.getString("residenceName"));

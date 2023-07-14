@@ -26,7 +26,4 @@
       And first name  = "Ahmad", second name = "mohammed", lastname = "AbuAishe", Phone="0593220265", email = "Ahmadmohammed@gmail.com", age ="21", OwUser = "Ahmad mohammed", OwPass = "11223344" for owner and first name  = "Ahmad", second name = "Sameer", lastname = "AbuAishe", Phone="0593220260", email = "Ahmadasameer@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "Ahmad sameer", tenPass = "1234" for tenant and usernames isn't available
       Then registration fails the account with username"Ahmad mohammed" and password "11223344" isn't created
 
-      Scenario: admin, tenant or owner want to logout
-        Given admin, tenant or owner already logged in to the system
-        And pressed logout
-        Then admin, tenant or owner logged out successfully
+      #logout scenario moved to logout feature file

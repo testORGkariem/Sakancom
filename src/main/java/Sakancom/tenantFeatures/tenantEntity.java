@@ -12,7 +12,4 @@ public class tenantEntity {
     public boolean displayBooked(String userName){
         return  false;
     }
-
-
-
 }

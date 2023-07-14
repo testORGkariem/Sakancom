@@ -88,7 +88,7 @@ public class loginEntity {
     public void logout()
     {
     }
-    public boolean failureReg(String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass) {
+    public boolean failureReg(String tenUser, String tenPass) {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();

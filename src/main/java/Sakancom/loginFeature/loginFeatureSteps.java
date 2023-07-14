@@ -104,7 +104,7 @@ public class loginFeatureSteps {
     @Given("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and usernames isn't available")
     public void first_name_second_name_lastname_phone_email_age_ow_user_ow_pass_for_owner_and_first_name_second_name_lastname_phone_email_age_reg_num_major_ten_user_ten_pass_for_tenant_and_usernames_isn_t_available(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass)
     {
-        assertTrue(obj.failureReg(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass));
+        assertTrue(obj.failureReg(tenUser, tenPass));
     }
     @Then("registration fails the account with username{string} and password {string} isn't created")
     public void registrationFailsTheAccountWithUsernameAndPasswordIsnTCreated(String username, String password) {
@@ -112,21 +112,5 @@ public class loginFeatureSteps {
         {
             assertTrue(true);
         }
-    }
-    @Given("admin, tenant or owner already logged in to the system")
-    public void admin_tenant_or_owner_already_logged_in_to_the_system()
-    {
-        userLoggedin = true;
-        assertTrue(true);
-    }
-    @Given("pressed logout")
-    public void pressed_logout()
-    {
-        obj.logout();
-    }
-    @Then("admin, tenant or owner logged out successfully")
-    public void admin_tenant_or_owner_logged_out_successfully()
-    {
-        assertTrue(true);
     }
 }

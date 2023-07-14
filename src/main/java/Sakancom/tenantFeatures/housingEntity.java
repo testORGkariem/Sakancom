@@ -9,14 +9,13 @@ import java.sql.Statement;
 
 public class housingEntity {
     String Picture, Price, Location, Services, Available, Owner, Tenant, ID;
-
+    String host = "localhost";
+    int port = 3306;
+    String database = "Sakancom";
+    String username = "root";
+    String password = "password";
+    String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     public int showAvailable() {
-        String host = "localhost";
-        int port = 3306;
-        String database = "Sakancom";
-        String username = "root";
-        String password = "password";
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the MySQL database!");
@@ -26,7 +25,6 @@ public class housingEntity {
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-
                 System.out.println(counter + "-");
                 System.out.println("ID : " + resultSet.getString(8));
                 System.out.println("Picture : " + resultSet.getString(1));
@@ -36,8 +34,6 @@ public class housingEntity {
                 System.out.println("Number of people lived in : " + resultSet.getString(11));
                 System.out.println("Floor Number: " + resultSet.getString(9));
                 System.out.println("Department Name : " + resultSet.getString(10));
-
-
                 counter++;
                 System.out.println("_____________________________________________");
 
@@ -49,12 +45,6 @@ public class housingEntity {
     }
 
     public boolean availableWithID(String id){
-        String host = "localhost";
-        int port = 3306;
-        String database = "Sakancom";
-        String username = "root";
-        String password = "password";
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connected to the MySQL database!");
@@ -85,12 +75,6 @@ public class housingEntity {
         }
         if (flag1 == 1 && id.isEmpty() == false) {
             int flagg = 0;
-            String host = "localhost";
-            int port = 3306;
-            String database = "Sakancom";
-            String username = "root";
-            String password = "password";
-            String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
             int counter = 1;
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
                 System.out.println("Connected to the MySQL database!");

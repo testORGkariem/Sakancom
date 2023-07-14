@@ -15,7 +15,7 @@ public class SakancomApplication{
             System.out.println("Choose from the following ");
             System.out.println("1-Login");
             System.out.println("2-Signup");
-            System.out.print("The Value : ");
+            System.out.print("The Value: ");
             Scanner input = new Scanner(System.in);
             int LoginOrSignUp = 0;
             LoginOrSignUp = input.nextInt();
@@ -26,23 +26,22 @@ public class SakancomApplication{
                 loginEntity in=new loginEntity();
 
                 Scanner input1 = new Scanner(System.in);
-                System.out.print("Enter User Name : ");
+                System.out.print("Enter User Name: ");
                 in.UserName = input1.nextLine();
-                System.out.print("Enter the Password : ");
+                System.out.print("Enter the Password: ");
                 in.Password = input1.nextLine();
                 String role= in.checkValues(in.UserName,in.Password);
 
 
                 if(role.equals("tenant")){
                     while(true){
-
-                        System.out.println("_____________________________________________");
+                        System.out.println("_________________Tenant_________________");
                         System.out.println("Choose from the following");
                         System.out.println("1-View the available housing");
                         System.out.println("2-Furniture");
                         System.out.println("3-Control Panel");
-                        System.out.println("4-Sign out");
-                        System.out.print("The Value : ");
+                        System.out.println("4-Logout");
+                        System.out.print("The Value: ");
                         Scanner input2=new Scanner(System.in);
                         int choose=input2.nextInt();
                         System.out.println("_____________________________________________");
@@ -55,11 +54,10 @@ public class SakancomApplication{
                                 String YN=new String();
                                 YN=inp.nextLine();
                                 if(YN.equals("Yes")){
-                                    System.out.println("Enter house ID : ");
+                                    System.out.println("Enter house ID: ");
                                     Scanner id = new Scanner(System.in);
                                     String ID = id.nextLine();
                                     e.booking(ID,in.UserName);
-
                                 }}
                         }
                         if(choose==2) {
@@ -70,7 +68,7 @@ public class SakancomApplication{
                                 System.out.println("2-Add Furniture's");
                                 System.out.println("3-Sell Furniture's");
                                 System.out.println("4-Back");
-                                System.out.print("The Value : ");
+                                System.out.print("The Value: ");
                                 Scanner inp = new Scanner(System.in);
                                 int ch = inp.nextInt();
                                 System.out.println("_____________________________________________");
@@ -80,13 +78,13 @@ public class SakancomApplication{
 
                                 } else if (ch == 2) {
                                     Scanner inp1 = new Scanner(System.in);
-                                    System.out.println("Enter Picture : ");
+                                    System.out.println("Enter Picture: ");
                                     o.Picture = inp1.nextLine();
-                                    System.out.println("Enter Description : ");
+                                    System.out.println("Enter Description: ");
                                     o.Description = inp1.nextLine();
-                                    System.out.println("Enter Price : ");
+                                    System.out.println("Enter Price: ");
                                     o.Price = inp1.nextLine();
-                                    System.out.println("Enter ID : ");
+                                    System.out.println("Enter ID: ");
                                     o.ID = inp1.nextLine();
                                     o.selled = "No";
                                     o.addFurniture(in.UserName, o.Picture, o.Description, o.Price, o.ID, o.selled);
@@ -96,7 +94,6 @@ public class SakancomApplication{
                                     System.out.println("Enter ID to sell: ");
                                     o.ID = inp1.nextLine();
                                     o.sellFurniture(o.ID, in.UserName);
-
                                 } else if (ch == 4) {
                                     break;
                                 }
@@ -113,47 +110,68 @@ public class SakancomApplication{
 
                 }
                 else if(role.equals("owner")){
-                    System.out.println("_____________________________________________");
-                    System.out.println("___________________Welcome___________________");
+                    System.out.println("____________________Owner____________________");
                     System.out.println("Choose from the following ");
                     System.out.println("1-Housing ");
                     System.out.println("2-Logout ");
-                    System.out.print("The Value : ");
+                    System.out.print("The Value: ");
                     Scanner i = new Scanner(System.in);
                     int inp = i.nextInt();
                     if(inp == 1)
                     {
                         System.out.println("___________________Housing___________________");
-                        System.out.println("1-Add Residence ");
-                        System.out.println("2-Show Residences ");
-                        System.out.print("The Value : ");
+                        System.out.println("1-Add Housing ");
+                        System.out.println("2-Show Housings ");
+                        System.out.print("The Value: ");
                         Scanner inp1 = new Scanner(System.in);
                         int input2 = inp1.nextInt();
                         if(input2 == 1)
                         {
-                            System.out.println("________________Add Residence________________");
-                            System.out.println("....");
+                            System.out.println("________________Add Housing________________");
+                            System.out.println("");
                         }
-                        System.out.println("__________________Residences_________________ ");
+                        if(input2 == 2)
+                        {
+                            System.out.println("_______________Show Housings_______________");
+                            //call function
+                        }
                     }
                 }
                 else if (role.equals("admin")) {
+                    System.out.println("____________________Admin____________________");
+                    System.out.println("Choose from the following ");
+                    System.out.println("1- See pending Housings ");
+                    System.out.println("2- See Reservations ");
+                    System.out.println("3- Logout ");
+                    System.out.println("The Value:  ");
+                    Scanner inp1 = new Scanner(System.in);
+                    int input2 = inp1.nextInt();
+                    if(input2 == 1)
+                    {
 
+                    }
+                    if(input2 == 2)
+                    {
+
+                    }
+                    if(input2 == 3)
+                    {
+                        System.out.println("Logged out successfully");
+                        break;
+                    }
                 }
-                System.out.println("_____________________________________________");
             }
             else if (LoginOrSignUp==2) {
                 System.out.println("_____________________________________________");
                 System.out.println("Choose from the following ");
                 System.out.println("1-Owner");
                 System.out.println("2-Tenant");
-                System.out.print("The Value : ");
+                System.out.print("The Value: ");
                 Scanner in = new Scanner(System.in);
                 int inp = in.nextInt();
                 if(inp == 1) {
                     loginEntity obj  = new loginEntity();
                     Scanner inp1 = new Scanner(System.in);
-                    System.out.println("_____________________________________________");
                     System.out.println("________________Signup as Owner________________");
                     System.out.println("Please enter your First name: ");
                     obj.fName = inp1.nextLine();
