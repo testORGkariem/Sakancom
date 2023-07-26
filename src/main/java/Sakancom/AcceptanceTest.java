@@ -1,4 +1,4 @@
-package Sakancom.loginFeature;
+package Sakancom;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
         plugin = {"summary","html:target/cucumber/report.html"},
         monochrome = true, //readable output on console.
         snippets = SnippetType.CAMELCASE,
-        glue = "Sakancom.loginFeature"
+        glue = "Sakancom"
 )
 public class AcceptanceTest {
 

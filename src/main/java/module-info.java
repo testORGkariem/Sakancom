@@ -4,6 +4,6 @@ module com.example.sakancom {
     requires io.cucumber.junit;
     requires io.cucumber.java;
     requires java.desktop;
-    opens Sakancom.loginFeature;
-    exports Sakancom.loginFeature;
+    exports Sakancom;
+    opens Sakancom;
 }

@@ -8,22 +8,22 @@
 
     Scenario: successful login
       Given tenant or owner wants to login to the system
-      And enters "kariem" as a username and "123456" as a password and both are correct
+      And enters "Yazan5" as a username and "Yazan" as a password and both are correct
       Then login successful
 
     Scenario: failure login
       Given tenant or owner login to the system
-      And enters "kariemm" as a username and "1234566" as a password and one of them are wrong
+      And enters "Yazan55" as a username and "Yazan55" as a password and one of them are wrong
       Then error appears
 
     Scenario: successful registration as a tenant or owner
         Given user wants to register as a tenant or owner
-        And first name  = "Ahmad", second name = "mohammed", lastname = "AbuAishe", Phone="0593220265", email = "Ahmadmohammed@gmail.com", age ="21", OwUser = "Ahmad mohammed", OwPass = "11223344" for owner and first name  = "Ahmad", second name = "Sameer", lastname = "AbuAishe", Phone="0593220260", email = "Ahmadasameer@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "Ahmad sameer", tenPass = "1234" for tenant and both usernames is available
-        Then registration complete and the account is created with username"Ahmad mohammed" and password "11223344"
+        And first name  = "yaser", second name = "mohammed", lastname = "AbuAishe", Phone="0593220261", email = "yasermohammed@gmail.com", age ="21", OwUser = "yaser mohammed", OwPass = "11223344" for owner and first name  = "yaser", second name = "sameer", lastname = "AbuAishe", Phone="0593220261", email = "yaser@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "yaser sameer", tenPass = "1234" for tenant and both usernames is available
+        Then registration complete and the account is created with username"yaser mohammed" and password "11223344"
 
     Scenario: registration fail as a tenant or owner
       Given user wants to signup as a tenant or owner
-      And first name  = "Ahmad", second name = "mohammed", lastname = "AbuAishe", Phone="0593220265", email = "Ahmadmohammed@gmail.com", age ="21", OwUser = "Ahmad mohammed", OwPass = "11223344" for owner and first name  = "Ahmad", second name = "Sameer", lastname = "AbuAishe", Phone="0593220260", email = "Ahmadasameer@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "Ahmad sameer", tenPass = "1234" for tenant and usernames isn't available
-      Then registration fails the account with username"Ahmad mohammed" and password "11223344" isn't created
+      And first name  = "yaser", second name = "mohammed", lastname = "AbuAishe", Phone="0593220261", email = "yasermohammed@gmail.com", age ="21", OwUser = "yaser mohammed", OwPass = "11223344" for owner and first name  = "yaser", second name = "sameer", lastname = "AbuAishe", Phone="0593220261", email = "yaser@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "yaser sameer", tenPass = "1234" for tenant and usernames isn't available
+      Then registration fails the account with username"yaser mohammed" and password "11223344" isn't created
 
       #logout scenario moved to logout feature file

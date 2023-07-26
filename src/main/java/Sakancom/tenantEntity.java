@@ -1,4 +1,4 @@
-package Sakancom.tenantFeatures;
+package Sakancom;
 
 public class tenantEntity {
     String firstName,secondName,lastName,phoneNumber,Email,Age,registrationNumber,Major,userName,Password,fullProfile;

@@ -1,15 +1,11 @@
-package Sakancom.loginFeature;
-import Sakancom.OwnerFeatures.ownerEntity;
-import Sakancom.tenantFeatures.ControlPanel;
-import Sakancom.tenantFeatures.Furniture;
-import Sakancom.tenantFeatures.housingEntity;
+package Sakancom;
 
-import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SakancomApplication{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         while(true){
             System.out.println("_____________________________________________");
             System.out.println("Choose from the following ");
@@ -102,7 +98,7 @@ public class SakancomApplication{
                         } else if
                         (choose==3) {
                             ControlPanel e=new ControlPanel();
-                            e.displayBooked(in.UserName);
+                            e.displayControlPanel(in.UserName);
                         } else if (choose==4) {
                             break;
                         }
@@ -119,30 +115,64 @@ public class SakancomApplication{
                     int inp = i.nextInt();
                     if(inp == 1)
                     {
+                        ownerEntity obj  = new ownerEntity();
                         System.out.println("___________________Housing___________________");
                         System.out.println("1-Add Housing ");
                         System.out.println("2-Show Housings ");
+                        System.out.println("3-Back ");
                         System.out.print("The Value: ");
                         Scanner inp1 = new Scanner(System.in);
                         int input2 = inp1.nextInt();
-                        if(input2 == 1)
-                        {
+                        if(input2 == 1) {
+                            Scanner inp3 = new Scanner(System.in);
                             System.out.println("________________Add Housing________________");
-                            System.out.println("");
+                            System.out.println("Enter Owner username: '" + in.UserName + "'");
+                            obj.addHousing(in.UserName);
+                            obj.addContactInfo(in.UserName);
+                            System.out.println("Do you want to insert picture? ");
+                            String yn = inp3.nextLine();
+                            if (yn.equals("Yes")) {
+                                obj.addPhoto();
+                            }
+                            System.out.println("Do you want to Enter Housing Location? ");
+                            String yn2 = inp3.nextLine();
+                            if (yn2.equals("Yes")) {
+                                System.out.println("Enter Housing Location: ");
+                                String location = inp3.nextLine();
+                                obj.addLocationInfo(location);
+                            }
+                            System.out.println("Do you want to Enter Housing Services? ");
+                            String yn3 = inp3.nextLine();
+                            if (yn3.equals("Yes")) {
+                                System.out.println("Enter Housing Services:");
+                                String services = inp3.nextLine();
+                                obj.addServices(services);
+                            }
+                            System.out.println("Do you want to Enter Rent price? ");
+                            String yn4 = inp3.nextLine();
+                            if(yn4.equals("Yes"))
+                            {
+                                System.out.println("Enter Rent price: ");
+                                String price = inp3.nextLine();
+                                obj.addPrice(price);
+                            }
                         }
+
                         if(input2 == 2)
                         {
                             System.out.println("_______________Show Housings_______________");
-                            //call function
+                            obj.showHousings(in.UserName);
                         }
+                        if(input2 == 3)
+                            break;
                     }
                 }
                 else if (role.equals("admin")) {
                     System.out.println("____________________Admin____________________");
                     System.out.println("Choose from the following ");
-                    System.out.println("1- See pending Housings ");
-                    System.out.println("2- See Reservations ");
-                    System.out.println("3- Logout ");
+                    System.out.println("1-See pending Housings ");
+                    System.out.println("2-See Reservations ");
+                    System.out.println("3-Logout ");
                     System.out.println("The Value:  ");
                     Scanner inp1 = new Scanner(System.in);
                     int input2 = inp1.nextInt();

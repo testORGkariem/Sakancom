@@ -1,4 +1,4 @@
-package Sakancom.tenantFeatures;
+package Sakancom;
 
 import io.cucumber.java.an.E;
 

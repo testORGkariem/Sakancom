@@ -1,4 +1,4 @@
-package Sakancom.loginFeature;
+package Sakancom;
 
 import java.sql.*;
 import static org.junit.Assert.*;
@@ -28,21 +28,18 @@ public class loginEntity {
             if (UserName.isEmpty() == true || Password.isEmpty() == true) {
             } else {
                 int flag = 0;
-                String query = "SELECT * FROM login where username='" + UserName + "'" + " and password='" + Password + "'";
+                String query = "SELECT * FROM login where username='"+UserName+"' and password='"+Password+"'";
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
-                    if (resultSet.getString(3).equals("tenant")) {
+                    if (resultSet.getString(3).equalsIgnoreCase("tenant")) {
                         Role=new String("tenant");
                         return Role;
-                    } else if (resultSet.getString(3).equals("admin")) {
+                    } else if (resultSet.getString(3).equalsIgnoreCase("admin")) {
                         Role=new String("admin");
                         return Role;
-                    } else if (resultSet.getString(3).equals("owner")) {
+                    } else if (resultSet.getString(3).equalsIgnoreCase("owner")) {
                         Role=new String("owner");
-                        return Role;
-                    } else {
-                        Role=new String("null");
                         return Role;
                     }
                 }
@@ -85,9 +82,7 @@ public class loginEntity {
         }
         return Tenant;
     }
-    public void logout()
-    {
-    }
+
     public boolean failureReg(String tenUser, String tenPass) {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -101,6 +96,5 @@ public class loginEntity {
         }
         return reg;
     }
-
 }
 

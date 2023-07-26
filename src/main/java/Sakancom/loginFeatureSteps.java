@@ -1,6 +1,5 @@
-package Sakancom.loginFeature;
+package Sakancom;
 
-import java.sql.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
@@ -45,8 +44,6 @@ public class loginFeatureSteps {
     @Given("enters {string} as a username and {string} as a password and both are correct")
     public void enters_as_a_username_and_as_a_password_and_both_are_correct(String USERNAME, String PASSWORD)
     {
-        tenantFlag = false;
-        ownerFlag = false;
         if(obj.checkValues(USERNAME,PASSWORD).equals("tenant")||obj.checkValues(USERNAME,PASSWORD).equals("owner"))
         {
             assertTrue(true);
@@ -67,10 +64,11 @@ public class loginFeatureSteps {
     @Given("enters {string} as a username and {string} as a password and one of them are wrong")
     public void enters_as_a_username_and_as_a_password_and_one_of_them_are_wrong(String USERNAME, String PASSWORD)
     {
-        tenantFlag = false;
-        ownerFlag = false;
+
         if(!obj.checkValues(USERNAME,PASSWORD).equals("owner")||!obj.checkValues(USERNAME,PASSWORD).equals("tenant")||!obj.checkValues(USERNAME,PASSWORD).equals("admin")){
             assertTrue(true);
+            tenantFlag = true;
+            ownerFlag = true;
         }
 
     }

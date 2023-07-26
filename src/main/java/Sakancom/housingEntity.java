@@ -1,4 +1,4 @@
-package Sakancom.tenantFeatures;
+package Sakancom;
 
 
 import java.io.Console;
@@ -18,7 +18,6 @@ public class housingEntity {
     public int showAvailable() {
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = new String();
             query = "Select * from housing where available='Yes' and accept='true'";
@@ -47,7 +46,6 @@ public class housingEntity {
     public boolean availableWithID(String id){
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = new String();
             query = "Select * from housing where id='"+id+"'";
@@ -77,7 +75,6 @@ public class housingEntity {
             int flagg = 0;
             int counter = 1;
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
-                System.out.println("Connected to the MySQL database!");
                 Statement statement = connection.createStatement();
                 Statement statement1 = connection.createStatement();
                 String query = new String();
@@ -99,18 +96,13 @@ public class housingEntity {
                             statement1.executeUpdate(query);
                         }
                         query="insert into booking (tenantUserName,houseID,Owner) value ('"+userName+"','"+id+"','"+res.getString(6)+"')";
-
                         statement1.executeUpdate(query);
-
                     }
                     else{
                         query = "update housing set available='No',peopleNum='+"+num+"',tenant='"+userName+"' where id='" + id + "'";
                         statement1.executeUpdate(query);
                     }
-
                 }
-
-
                 System.out.println("done");
                 if (availableWithID(id)) {
                     return true;
