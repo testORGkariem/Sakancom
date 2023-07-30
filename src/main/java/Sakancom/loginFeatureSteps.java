@@ -32,8 +32,7 @@ public class loginFeatureSteps {
     }
     @Then("admin login success")
     public void adminLoginSuccess() {
-        if(adminFlag)
-            assertTrue(true);
+            assertTrue(adminFlag);
     }
     @Given("tenant or owner wants to login to the system")
     public void tenant_or_owner_wants_to_login_to_the_system()
@@ -46,15 +45,14 @@ public class loginFeatureSteps {
     {
         if(obj.checkValues(USERNAME,PASSWORD).equals("tenant")||obj.checkValues(USERNAME,PASSWORD).equals("owner"))
         {
-            assertTrue(true);
+            assertTrue(obj.checkValues(USERNAME,PASSWORD).equals("tenant")||obj.checkValues(USERNAME,PASSWORD).equals("owner"));
             tenantFlag = true;
             ownerFlag = true;
         }
     }
     @Then("login successful")
     public void login_successful() {
-        if(tenantFlag||ownerFlag)
-            assertTrue(true);
+            assertTrue(tenantFlag||ownerFlag);
     }
     @Given("tenant or owner login to the system")
     public void tenant_or_owner_login_to_the_system() {
@@ -66,7 +64,7 @@ public class loginFeatureSteps {
     {
 
         if(!obj.checkValues(USERNAME,PASSWORD).equals("owner")||!obj.checkValues(USERNAME,PASSWORD).equals("tenant")||!obj.checkValues(USERNAME,PASSWORD).equals("admin")){
-            assertTrue(true);
+            assertTrue(!obj.checkValues(USERNAME,PASSWORD).equals("owner")||!obj.checkValues(USERNAME,PASSWORD).equals("tenant")||!obj.checkValues(USERNAME,PASSWORD).equals("admin"));
             tenantFlag = true;
             ownerFlag = true;
         }
@@ -74,7 +72,7 @@ public class loginFeatureSteps {
     }
     @Then("error appears")
     public void error_appears() {
-        assertTrue(true);
+        assertTrue("error",true);
     }
     @Given("user wants to register as a tenant or owner")
     public void user_wants_to_register_as_a_tenant_or_owner() {
@@ -89,10 +87,7 @@ public class loginFeatureSteps {
     @Then("registration complete and the account is created with username{string} and password {string}")
     public void registrationCompleteAndTheAccountIsCreatedWithUsernameAndPassword(String username, String password)
     {
-        if("tenant".equals(obj.checkValues(username, password))||"owner".equals(obj.checkValues(username, password)))
-        {
-            assertTrue(true);
-        }
+            assertTrue(("tenant".equals(obj.checkValues(username, password))||"owner".equals(obj.checkValues(username, password))));
     }
     @Given("user wants to signup as a tenant or owner")
     public void user_wants_to_signup_as_a_tenant_or_owner()
@@ -108,7 +103,7 @@ public class loginFeatureSteps {
     public void registrationFailsTheAccountWithUsernameAndPasswordIsnTCreated(String username, String password) {
         if("tenant".equals(obj.checkValues(username, password))||"owner".equals(obj.checkValues(username, password)))
         {
-            assertTrue(true);
+            assertTrue("tenant".equals(obj.checkValues(username, password))||"owner".equals(obj.checkValues(username, password)));
         }
     }
 }

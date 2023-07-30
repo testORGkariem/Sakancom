@@ -8,7 +8,7 @@ Feature: admin, tenant or owner logging out.
 
   Scenario: admin wants to logout
     Given admin is logged in
-    And  selected "2" from the dashboard
+    And  selected "3" from the dashboard
     Then admin logged out successfully
 
   Scenario: tenant wants to logout
