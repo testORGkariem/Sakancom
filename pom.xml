@@ -12,6 +12,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
+
+        <properties>
+            <sonar.organization>yazan-kariem</sonar.organization>
+            <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        </properties>
+
     </properties>
 
     <dependencies>

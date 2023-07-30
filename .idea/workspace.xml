@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="admin, owner features 90% combined the code">
+    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="admin, owner features 95% combined the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Features/Logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/Logout.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Features/owner.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/owner.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatureSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeatureSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/ownerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/ownerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/ownerFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/ownerFeatureSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,6 +311,8 @@
       <workItem from="1690450953164" duration="11000" />
       <workItem from="1690552601214" duration="27000" />
       <workItem from="1690623854202" duration="9847000" />
+      <workItem from="1690706650757" duration="157000" />
+      <workItem from="1690717792010" duration="141000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1687624994338</created>
@@ -429,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690402309817</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="admin, owner features 95% combined the code">
+      <created>1690706697797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690706697797</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +465,8 @@
     <MESSAGE value="ownerFeature 1.0.0 with main edited" />
     <MESSAGE value="admin, owner features 90%" />
     <MESSAGE value="admin, owner features 90% combined the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin, owner features 90% combined the code" />
+    <MESSAGE value="admin, owner features 95% combined the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin, owner features 95% combined the code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakancom$Feature__booking.ic" NAME="Feature: booking Coverage Results" MODIFIED="1689416466577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
