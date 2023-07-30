@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="admin, owner features 95% combined the code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="SonarCloud">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +311,7 @@
       <workItem from="1690552601214" duration="27000" />
       <workItem from="1690623854202" duration="9847000" />
       <workItem from="1690706650757" duration="157000" />
-      <workItem from="1690717792010" duration="141000" />
+      <workItem from="1690717792010" duration="524000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1687624994338</created>
@@ -433,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690706697797</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="SonarCloud">
+      <created>1690717999061</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690717999061</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +472,8 @@
     <MESSAGE value="admin, owner features 90%" />
     <MESSAGE value="admin, owner features 90% combined the code" />
     <MESSAGE value="admin, owner features 95% combined the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin, owner features 95% combined the code" />
+    <MESSAGE value="SonarCloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="SonarCloud" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakancom$Feature__booking.ic" NAME="Feature: booking Coverage Results" MODIFIED="1689416466577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
