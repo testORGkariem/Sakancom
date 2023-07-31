@@ -15,7 +15,7 @@ public class ownerEntity {
     boolean ownerFlag = false;
     boolean ownerUsername = false;
     boolean ownerPassword = false;
-    int counter = 50;
+    String counter = "10";
     String host = "localhost";
     int port = 3306;
     String database = "Sakancom";
@@ -30,37 +30,25 @@ public class ownerEntity {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
             String query = "insert into housing (owner, id) values ('"+ownerUsername +"', '"+counter+"')";
-            statement.executeUpdate(query);
-            return true;
-        }
+            statement.executeUpdate(query);return true;}
     }
 
     public boolean departmentName(String department){
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET departmentName='"+department+"' WHERE id ='"+counter+"'";
+            String query = "UPDATE housing SET departmentName='"+department+"' WHERE id ='"+department+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
 
-    public boolean addPhoto(){
+    public boolean addPhoto(String photo){
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String query = "UPDATE housing SET picture = ? WHERE id = '"+counter+"'";
-            PreparedStatement statement = connection.prepareStatement(query);
-            JFileChooser jfc = new JFileChooser();
-            jfc.showOpenDialog(null);
-            File file = jfc.getSelectedFile();
-            FileInputStream fis = new FileInputStream(file);
-            statement.setInt(1, 1);
-            statement.setBinaryStream(1, fis, fis.available());
-            statement.executeUpdate();
+            Statement statement = connection.createStatement();
+            String query = "UPDATE housing SET picture = '"+photo+"' WHERE id = '"+counter+"'";
+            statement.executeUpdate(query);
             return true;
-        } catch (SQLException | IOException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
 
     public boolean addLocationInfo(String location){
@@ -69,9 +57,7 @@ public class ownerEntity {
             String query = "UPDATE housing SET location = '"+location+"' WHERE id = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
     public boolean addServices(String services){
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -79,9 +65,7 @@ public class ownerEntity {
             String query = "UPDATE housing SET services = '"+services+"' WHERE id = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
     public boolean addPrice(String price){
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -89,20 +73,9 @@ public class ownerEntity {
             String query = "UPDATE housing SET price = '"+price+"' WHERE id = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
-    public boolean addContactInfo(String owner){
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET price = '"+price+"' WHERE id = '"+counter+"'";
-            statement.executeUpdate(query);
-            return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
     public  String checkValues(String UserName,String Password) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -114,27 +87,11 @@ public class ownerEntity {
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
-                    if (resultSet.getString(3).equals("tenant")) {
-                        Role=new String("tenant");
-                        return Role;
-                    } else if (resultSet.getString(3).equals("admin")) {
-                        Role=new String("admin");
-                        return Role;
-                    } else if (resultSet.getString(3).equals("owner")) {
-                        Role=new String("owner");
-                        return Role;
-                    } else {
-                        Role=new String("null");
-                        return Role;
-                    }
+                    if (resultSet.getString(3).equals("tenant")) {Role="tenant";} else if (resultSet.getString(3).equals("admin")) {Role="admin";} else if (resultSet.getString(3).equals("owner")) {Role="owner";} else {Role="null";}
                 }
-                if (flag == 0) {
-                    Role=new String("null");
-                    return Role;
-                }
+                if (flag == 0) {Role="null";}
             }
-        } catch (Exception ex) {
-        }
+        } catch (Exception ex) {}
         return Role;
     }
 
@@ -147,20 +104,24 @@ public class ownerEntity {
             while(resultSet.next()){
                 System.out.println("ID : " + resultSet.getString(8));
                 System.out.println("Picture : " + resultSet.getString(1));
-                byte[] imageData = resultSet.getBytes(1);
-                String base64Image = Base64.getEncoder().encodeToString(imageData);
-                System.out.println(base64Image);
                 System.out.println("Price : " + resultSet.getString(2));
                 System.out.println("Location : " + resultSet.getString(3));
                 System.out.println("Services : " + resultSet.getString(4));
                 System.out.println("Number of people lived in : " + resultSet.getString(11));
                 System.out.println("Floor Number: " + resultSet.getString(9));
                 System.out.println("Department Name : " + resultSet.getString(10));
+            }
+            Statement statement2 = connection.createStatement();
+            String query2 = "Select * from housing where owner = '"+owner+"'";
+            ResultSet resultSet2 = statement2.executeQuery(query2);
+            while(resultSet2.next()) {
+                System.out.print("Owner name : " + resultSet2.getString(1+3));
+                System.out.print(resultSet2.getString(2));
+                System.out.println(resultSet2.getString(3));
+                System.out.println("Owner email : " + resultSet2.getString(6));
+                System.out.println("Owner Phone number : " + resultSet2.getString(5));
                 return true;
             }
-        } catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-        return false;
+        } catch (SQLException e){throw new RuntimeException(e);}return false;
     }
 }

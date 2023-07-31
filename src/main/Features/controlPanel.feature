@@ -1,10 +1,12 @@
-Feature:ability to booking
-  Scenario: theres available housing to booking
-    Given tenant wants to booking and theres available housing id "1"
-    And the tenant typed "Yes" then type the id "1"
-    Then the booking of housing with id "1" will done and the tenant username is "YazanM23"
+Feature: view control panel
+  Scenario:the tenant choosed "3" from menu
+    Given tenant choosed "3" to view control panel
+    And the tenant has house booked before username is "YazanM23" the house id is "1"
+    Then the control panel will appear for tenant username "YazanM23"
 
-  Scenario: theres available housing to booking
-    Given tenant doesn't want to booking
-    And the tenant typed "No"
-    Then the booking will not done
+    Scenario: tenant pressed "3" to view the control panel
+      Given tenant pressed "3" to view the control panel
+      And the tenant didnt booked before username is "yazan1"
+      Then the control panel will not appear for tenant username "yazan1"
+
+

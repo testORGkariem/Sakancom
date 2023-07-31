@@ -65,9 +65,9 @@ public class ownerFeatureSteps {
             obj.addHousing(string);
         }
     }
-    @And("adding to the housing options appears and owner added photo by function addPhoto")
-    public void addingToTheHousingOptionsAppearsAndOwnerAddedPhotoByFunctionAddPhoto() {
-        if(obj.addPhoto())
+    @And("adding to the housing options appears and owner added {string} by function addPhoto")
+    public void addingToTheHousingOptionsAppearsAndOwnerAddedPhotoByFunctionAddPhoto(String photoLink) {
+        if(obj.addPhoto(photoLink))
         {
             photo = true;
             assertTrue(true);
@@ -141,22 +141,9 @@ public class ownerFeatureSteps {
 
 
     @Given("owner is logged in with username {string}, password {string} and selected {string} for housing and {string} for add housing.")
-    public void ownerIsLoggedInWithUsernamePasswordAndSelectedForHousingAndForAddHousing(String arg0, String arg1, String arg2, String arg3) {
-        if(ownerFlag)
-            assertTrue(arg2.equals("1")&&arg3.equals("1"));
-    }
-    @And("adding to the housing options appears and {string} contact information taken from database by function addContactInfo")
-    public void addingToTheHousingOptionsAppearsAndContactInformationTakenFromDatabaseByFunctionAddContactInfo(String arg0) {
-        if(obj.addContactInfo(arg0))
-        {
-            contactInfo = true;
-            assertTrue(true);
-        }
-    }
+    public void ownerIsLoggedInWithUsernamePasswordAndSelectedForHousingAndForAddHousing(String arg0, String arg1, String arg2, String arg3) {if(ownerFlag) assertTrue(arg2.equals("1")&&arg3.equals("1"));}
     @Then("contact information added successfully for owner {string}")
-    public void contact_information_added_successfully_for_owner(String string) {
-        assertTrue(contactInfo);
-    }
+    public void contact_information_added_successfully_for_owner(String string) {assertTrue(contactInfo);}
 
 
 
@@ -164,13 +151,13 @@ public class ownerFeatureSteps {
     public void owner_logged_in() {
         assertTrue(ownerFlag);
     }
-    @And("dashboard appears then selected {string} for housing then selected {string} for show housings full information")
-    public void dashboardAppearsThenSelectedForHousingThenSelectedForShowHousingsFullInformation(String housing, String showHousings) {
+    @Given("dashboard appears then selected {string} for housing then selected {string} for show housings full information using two queries from database")
+    public void dashboard_appears_then_selected_for_housing_then_selected_for_show_housings_full_information_using_two_queries_from_database(String housing, String showHousings) {
         if(ownerFlag)
             assertTrue(housing.equals("1")&&showHousings.equals("2"));
     }
-    @Then("housings appears for owner {string}")
-    public void housingsAppearsForOwner(String owner) {
+    @Then("housings and contact information appears for owner {string}")
+    public void housings_and_contact_information_appears_for_owner(String owner) {
         assertTrue(obj.showHousings(owner));
     }
 

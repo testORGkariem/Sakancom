@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="SonarCloud version 3">
+    <list default="true" id="7445ad12-fdd6-42eb-b1a3-cd2b1b567dc2" name="Changes" comment="SonarCloud version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/ControlPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/Furniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/controlPanelFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/housingEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Sakancom/loginFeature/loginEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/Furniture.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/Furniture.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/Logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/Logout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/availableHousing.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/availableHousing.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/booking.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/booking.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/controlPanel.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/controlPanel.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Features/owner.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Features/owner.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/SakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/SakancomApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/adminFeatureSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/ownerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/ownerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/ownerFeatureSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/ownerFeatureSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sakancom/tenantEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sakancom/tenantEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +94,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
@@ -121,14 +139,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: Logout" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: admin wants to logout" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/Logout.feature" />
       <option name="GLUE" value="Sakancom" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakancom" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Logout" />
+      <option name="NAME_FILTER" value="^admin wants to logout$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^admin wants to logout$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: admin wants to logout" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -140,15 +159,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: admin wants to logout" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: owner wants to enter number of floors" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/Logout.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/Features/owner.feature" />
       <option name="GLUE" value="Sakancom" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakancom" />
-      <option name="NAME_FILTER" value="^admin wants to logout$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^admin wants to logout$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: admin wants to logout" />
+      <option name="NAME_FILTER" value="^owner wants to enter number of floors$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^owner wants to enter number of floors$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: owner wants to enter number of floors" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -208,8 +227,11 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-20" />
       <option name="PACKAGE_NAME" value="Sakancom" />
       <option name="MAIN_CLASS_NAME" value="Sakancom.AcceptanceTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -245,13 +267,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.SakancomApplication" />
+      <item itemvalue="Cucumber Java.Scenario: owner wants to enter number of floors" />
+      <item itemvalue="Cucumber Java.Scenario: admin wants to logout" />
+      <item itemvalue="Cucumber Java.Scenario: owner wants to enter the department name" />
+      <item itemvalue="Cucumber Java.Scenario: show housings" />
+      <item itemvalue="JUnit.AcceptanceTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="Cucumber Java.Scenario: owner wants to enter the department name" />
         <item itemvalue="Cucumber Java.Scenario: show housings" />
         <item itemvalue="Cucumber Java.Scenario: admin wants to logout" />
-        <item itemvalue="Cucumber Java.Feature: Logout" />
+        <item itemvalue="Cucumber Java.Scenario: owner wants to enter number of floors" />
+        <item itemvalue="Cucumber Java.Scenario: owner wants to enter the department name" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +341,10 @@
       <workItem from="1690552601214" duration="27000" />
       <workItem from="1690623854202" duration="9847000" />
       <workItem from="1690706650757" duration="157000" />
-      <workItem from="1690717792010" duration="1132000" />
+      <workItem from="1690717792010" duration="1846000" />
+      <workItem from="1690744355942" duration="6768000" />
+      <workItem from="1690786849491" duration="95000" />
+      <workItem from="1690820830735" duration="1863000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1687624994338</created>
@@ -453,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690718568125</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="SonarCloud version">
+      <created>1690718947972</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690718947972</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +529,8 @@
     <MESSAGE value="SonarCloud" />
     <MESSAGE value="SonarCloud version 2" />
     <MESSAGE value="SonarCloud version 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="SonarCloud version 3" />
+    <MESSAGE value="SonarCloud version" />
+    <option name="LAST_COMMIT_MESSAGE" value="SonarCloud version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakancom$Feature__booking.ic" NAME="Feature: booking Coverage Results" MODIFIED="1689416466577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -501,7 +542,7 @@
     <SUITE FILE_PATH="coverage/Sakancom$Feature__addResidences.ic" NAME="Feature: addResidences Coverage Results" MODIFIED="1689017672114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakancom$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1690652214748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakancom$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1690830295683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Sakancom.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sakancom$Scenario__successful_login.ic" NAME="Scenario: successful login Coverage Results" MODIFIED="1688486256085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

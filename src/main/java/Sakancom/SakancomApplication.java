@@ -126,13 +126,18 @@ public class SakancomApplication{
                         if(input2 == 1) {
                             Scanner inp3 = new Scanner(System.in);
                             System.out.println("________________Add Housing________________");
+                            System.out.println("Enter Housing ID: ");
+                            obj.counter = inp3.nextLine();
                             System.out.println("Enter Owner username: '" + in.UserName + "'");
                             obj.addHousing(in.UserName);
-                            obj.addContactInfo(in.UserName);
+                            System.out.println("Enter Department name: ");
+                            String depName = inp3.nextLine();
+                            obj.departmentName(depName);
                             System.out.println("Do you want to insert picture? ");
                             String yn = inp3.nextLine();
                             if (yn.equals("Yes")) {
-                                obj.addPhoto();
+                                String photo = inp3.nextLine();
+                                obj.addPhoto(photo);
                             }
                             System.out.println("Do you want to Enter Housing Location? ");
                             String yn2 = inp3.nextLine();
