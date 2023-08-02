@@ -1,15 +1,15 @@
-package Sakancom.loginFeature;
+package Sakancom;
+
+import io.cucumber.java.an.E;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class ControlPanel {
+public class showLivedIn {
 
-    public boolean isBooked(String userName){
-
-
+    public boolean isLived(String id){
         String host = "localhost";
         int port = 3306;
         String database = "Sakancom";
@@ -18,10 +18,10 @@ public class ControlPanel {
         String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Connected to the MySQL database!");
+
             Statement statement = connection.createStatement();
             String query = new String();
-            query = "Select * from booking where tenantUserName='"+userName+"'" ;
+            query = "Select * from Tenants_Housing where houseID='" + id + "'";
             ResultSet res = statement.executeQuery(query);
             while (res.next()){
                 return true;
@@ -32,14 +32,11 @@ public class ControlPanel {
 
         }
 
-
-            return false;
+        return false;
 
     }
-
-    public boolean displayBooked(String userName) {
-        if (isBooked(userName)) {
-            int counter=1;
+    public boolean displayLived(String id) {
+        if (isLived(id)) {
             String host = "localhost";
             int port = 3306;
             String database = "Sakancom";
@@ -48,26 +45,24 @@ public class ControlPanel {
             String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
 
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
-                System.out.println("Connected to the MySQL database!");
+
                 Statement statement = connection.createStatement();
                 String query = new String();
+                query = "Select * from Tenants_Housing where houseID='" + id + "'";
+                ResultSet res = statement.executeQuery(query);
+                while (res.next()) {
+                    System.out.println("People is : " + res.getString(1));
 
-query="select ";
-
-
+                }
+                return true;
             } catch (Exception e) {
-e.printStackTrace();
+
             }
 
 
-            return false;
         }
         return false;
     }
 
-    public boolean displayOwnerInfo(String userName){
-
-        return false;
-    }
 
 }

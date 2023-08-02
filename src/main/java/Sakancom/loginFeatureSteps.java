@@ -1,5 +1,6 @@
 package Sakancom;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
@@ -27,8 +28,10 @@ public class loginFeatureSteps {
     public void enters_as_a_username_and_enters_as_a_password(String uname, String pword) {
         adminFlag = false;
         String Role=new String("admin");
-        if(Role.equals(obj.checkValues(uname,pword)));
+        if(Role.equals(obj.checkValues(uname,pword))){
+        assertEquals("true", Role.equals(obj.checkValues(uname,pword)));
         adminFlag = true;
+        }
     }
     @Then("admin login success")
     public void adminLoginSuccess() {
@@ -78,9 +81,8 @@ public class loginFeatureSteps {
     public void user_wants_to_register_as_a_tenant_or_owner() {
         assertTrue(true);
     }
-    @Given("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and both usernames is available")
-    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeRegNumMajorTenUserTenPassForTenantAndBothUsernamesIsAvailable(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass)
-    {
+    @And("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and both usernames is available and used two database queries")
+    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeReg_numMajorTenUserTenPassForTenantAndBothUsernamesIsAvailableAndUsedTwoDatabaseQueries(String Fname, String Mname, String Lname, String Phone, String Owemail, String age, String OwUser, String OwPass, String FFname, String MMname, String LLname, String PPhone, String tenmail, String Age, String Reg_num, String major, String tenUser, String tenPass) {
         obj.printTenant(FFname, MMname, LLname, PPhone, tenmail, Age, Reg_num, major, tenUser, tenPass);
         obj.printOwner(Fname, Mname, Lname, Phone, Owemail, age, OwUser, OwPass);
     }

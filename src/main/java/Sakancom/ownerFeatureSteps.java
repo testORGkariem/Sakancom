@@ -45,16 +45,12 @@ public class ownerFeatureSteps {
                 assertTrue(string3.equals("1") && string4.equals("1"));
     }
     @And("enters {string} as department name using function departmentName")
-    public void entersAsDepartmentNameUsingFunctionDepartmentName(String arg0) {
-        if(obj.departmentName(arg0)) {
-            department = true;
-            assertTrue(obj.departmentName(arg0));
-        }
+    public void entersAsDepartmentNameUsingFunctionDepartmentName(String string) {
+        if (obj.departmentName(string)) {
+            department = true;assertTrue(true);} else assertFalse(true);
     }
     @Then("department added successfully for owner {string}")
-    public void department_added_successfully_for_owner(String string) {
-        assertTrue(department);
-    }
+    public void department_added_successfully_for_owner(String string) {assertTrue(department);}
 
 
 
@@ -68,10 +64,8 @@ public class ownerFeatureSteps {
     @And("adding to the housing options appears and owner added {string} by function addPhoto")
     public void addingToTheHousingOptionsAppearsAndOwnerAddedPhotoByFunctionAddPhoto(String photoLink) {
         if(obj.addPhoto(photoLink))
-        {
-            photo = true;
-            assertTrue(true);
-        }
+        {photo = true;
+            assertTrue(true);} else assertFalse(true);
     }
     @Then("photo added successfully for owner {string}")
     public void photo_added_successfully_for_owner(String string) {
@@ -87,11 +81,7 @@ public class ownerFeatureSteps {
 
     @And("adding to the housing options appears and owner entered {string} as location and information by function addLocationInfo")
     public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsLocationAndInformationByFunctionAddLocationInfo(String string) {
-        if(obj.addLocationInfo(string))
-        {
-            locationInfo = true;
-            assertTrue(true);
-        }
+            locationInfo = true;assertTrue(obj.addLocationInfo(string));
     }
     @Then("location and information added successfully for owner {string}")
     public void location_and_information_added_successfully_for_owner(String string) {
@@ -107,11 +97,7 @@ public class ownerFeatureSteps {
     }
     @And("adding to the housing options appears and owner entered {string} as services by function addServices")
     public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsServicesByFunctionAddServices(String string) {
-        if(obj.addServices(string))
-        {
-            services = true;
-            assertTrue(true);
-        }
+            services = true;assertTrue(obj.addServices(string));
     }
     @Then("services added successfully for owner {string}")
     public void services_added_successfully_for_owner(String string) {
@@ -127,23 +113,13 @@ public class ownerFeatureSteps {
     }
     @And("adding to the housing options appears and owner entered {string} as monthly rent by function addPrice")
     public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsMonthlyRentByFunctionAddPrice(String string) {
-        if(obj.addPrice(string))
-        {
             price = true;
-            assertTrue(true);
-        }
+            assertTrue(obj.addPrice(string));
     }
     @Then("monthly rent added successfully for owner {string}")
     public void monthly_rent_added_successfully_for_owner(String string) {
             assertTrue(price);
     }
-
-
-
-    @Given("owner is logged in with username {string}, password {string} and selected {string} for housing and {string} for add housing.")
-    public void ownerIsLoggedInWithUsernamePasswordAndSelectedForHousingAndForAddHousing(String arg0, String arg1, String arg2, String arg3) {if(ownerFlag) assertTrue(arg2.equals("1")&&arg3.equals("1"));}
-    @Then("contact information added successfully for owner {string}")
-    public void contact_information_added_successfully_for_owner(String string) {assertTrue(contactInfo);}
 
 
 

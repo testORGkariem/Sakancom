@@ -104,8 +104,7 @@ public class ControlPanel {
 
                 return true;
             }
-            connection.close();
-            re.close();
+
         }
         catch (Exception e){
 
@@ -131,8 +130,7 @@ public class ControlPanel {
             while (res.next()){
                 return res.getString(3);
             }
-            connection.close();
-            res.close();
+
         }
         catch (Exception e){
 
@@ -159,8 +157,7 @@ public class ControlPanel {
             while (res.next()){
                 return res.getString(1);
             }
-            connection.close();
-            res.close();
+
         }
         catch (Exception e){
 
@@ -212,9 +209,6 @@ public class ControlPanel {
             return true;
         }
         return false;
-    }
-    public boolean displayLivedIn(String id){
-        return  true;
     }
 
 

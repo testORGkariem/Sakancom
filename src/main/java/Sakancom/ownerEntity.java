@@ -1,16 +1,13 @@
 package Sakancom;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.sql.*;
-import java.util.Base64;
-import javax.swing.*;
 
+import java.sql.*;
+
+import java.util.logging.*;
 import static org.junit.Assert.fail;
 
 public class ownerEntity {
+    private static final Logger logger = Logger.getLogger(ownerEntity.class.getName());
 
     boolean ownerFlag = false;
     boolean ownerUsername = false;
@@ -29,14 +26,14 @@ public class ownerEntity {
         //counter++;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
-            String query = "insert into housing (owner, id) values ('"+ownerUsername +"', '"+counter+"')";
-            statement.executeUpdate(query);return true;}
+            String query = "insert into housing (owner, id) values ('"+ownerUsername+"', '"+counter+"')";
+            statement.executeUpdate(query);}return true;
     }
 
     public boolean departmentName(String department){
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET departmentName='"+department+"' WHERE id ='"+department+"'";
+            String query = "UPDATE housing SET departmentName = '"+department+"' WHERE id = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
         } catch (SQLException e) {throw new RuntimeException(e);}
@@ -109,18 +106,13 @@ public class ownerEntity {
                 System.out.println("Services : " + resultSet.getString(4));
                 System.out.println("Number of people lived in : " + resultSet.getString(11));
                 System.out.println("Floor Number: " + resultSet.getString(9));
-                System.out.println("Department Name : " + resultSet.getString(10));
-            }
-            Statement statement2 = connection.createStatement();
-            String query2 = "Select * from housing where owner = '"+owner+"'";
-            ResultSet resultSet2 = statement2.executeQuery(query2);
-            while(resultSet2.next()) {
-                System.out.print("Owner name : " + resultSet2.getString(1+3));
-                System.out.print(resultSet2.getString(2));
-                System.out.println(resultSet2.getString(3));
-                System.out.println("Owner email : " + resultSet2.getString(6));
-                System.out.println("Owner Phone number : " + resultSet2.getString(5));
-                return true;
+                System.out.println("Department Name : " + resultSet.getString(10)+"\n");
+                System.out.println("Owner information");
+                System.out.println("Owner name : " + resultSet.getString(1)+" ");
+                System.out.print(resultSet.getString(2)+" ");
+                System.out.print(resultSet.getString(3));
+                System.out.println("Owner email : " + resultSet.getString(6));
+                System.out.println("Owner Phone number : " + resultSet.getString(5));
             }
         } catch (SQLException e){throw new RuntimeException(e);}return false;
     }

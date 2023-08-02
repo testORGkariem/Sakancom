@@ -19,18 +19,18 @@ public class SakancomApplication{
 
             if (LoginOrSignUp == 1) {
                 System.out.println("\n******* Login Page *******\n");
-                loginEntity in=new loginEntity();
+                loginEntity in = new loginEntity();
 
                 Scanner input1 = new Scanner(System.in);
                 System.out.print("Enter User Name: ");
                 in.UserName = input1.nextLine();
                 System.out.print("Enter the Password: ");
                 in.Password = input1.nextLine();
-                String role= in.checkValues(in.UserName,in.Password);
+                String role = in.checkValues(in.UserName, in.Password);
 
 
-                if(role.equals("tenant")){
-                    while(true){
+                if (role.equals("tenant")) {
+                    while (true) {
                         System.out.println("_________________Tenant_________________");
                         System.out.println("Choose from the following");
                         System.out.println("1-View the available housing");
@@ -38,25 +38,26 @@ public class SakancomApplication{
                         System.out.println("3-Control Panel");
                         System.out.println("4-Logout");
                         System.out.print("The Value: ");
-                        Scanner input2=new Scanner(System.in);
-                        int choose=input2.nextInt();
+                        Scanner input2 = new Scanner(System.in);
+                        int choose = input2.nextInt();
                         System.out.println("_____________________________________________");
-                        if(choose==1){
-                            housingEntity e=new housingEntity();
-                            int avb= e.showAvailable();
-                            if(avb>1){
+                        if (choose == 1) {
+                            housingEntity e = new housingEntity();
+                            int avb = e.showAvailable();
+                            if (avb > 1) {
                                 System.out.println("do you want to book  accommodation? (Yes or No)");
-                                Scanner inp=new Scanner(System.in);
-                                String YN=new String();
-                                YN=inp.nextLine();
-                                if(YN.equals("Yes")){
+                                Scanner inp = new Scanner(System.in);
+                                String YN = new String();
+                                YN = inp.nextLine();
+                                if (YN.equals("Yes")) {
                                     System.out.println("Enter house ID: ");
                                     Scanner id = new Scanner(System.in);
                                     String ID = id.nextLine();
-                                    e.booking(ID,in.UserName);
-                                }}
+                                    e.booking(ID, in.UserName);
+                                }
+                            }
                         }
-                        if(choose==2) {
+                        if (choose == 2) {
                             while (true) {
                                 System.out.println("_____________________________________________");
                                 System.out.println("Choose from the following");
@@ -96,16 +97,15 @@ public class SakancomApplication{
 
                             }
                         } else if
-                        (choose==3) {
-                            ControlPanel e=new ControlPanel();
+                        (choose == 3) {
+                            ControlPanel e = new ControlPanel();
                             e.displayControlPanel(in.UserName);
-                        } else if (choose==4) {
+                        } else if (choose == 4) {
                             break;
                         }
                     }
 
-                }
-                else if(role.equals("owner")){
+                } else if (role.equals("owner")) {
                     System.out.println("____________________Owner____________________");
                     System.out.println("Choose from the following ");
                     System.out.println("1-Housing ");
@@ -113,66 +113,66 @@ public class SakancomApplication{
                     System.out.print("The Value: ");
                     Scanner i = new Scanner(System.in);
                     int inp = i.nextInt();
-                    if(inp == 1)
-                    {
-                        ownerEntity obj  = new ownerEntity();
-                        System.out.println("___________________Housing___________________");
-                        System.out.println("1-Add Housing ");
-                        System.out.println("2-Show Housings ");
-                        System.out.println("3-Back ");
-                        System.out.print("The Value: ");
-                        Scanner inp1 = new Scanner(System.in);
-                        int input2 = inp1.nextInt();
-                        if(input2 == 1) {
-                            Scanner inp3 = new Scanner(System.in);
-                            System.out.println("________________Add Housing________________");
-                            System.out.println("Enter Housing ID: ");
-                            obj.counter = inp3.nextLine();
-                            System.out.println("Enter Owner username: '" + in.UserName + "'");
-                            obj.addHousing(in.UserName);
-                            System.out.println("Enter Department name: ");
-                            String depName = inp3.nextLine();
-                            obj.departmentName(depName);
-                            System.out.println("Do you want to insert picture? ");
-                            String yn = inp3.nextLine();
-                            if (yn.equals("Yes")) {
-                                String photo = inp3.nextLine();
-                                obj.addPhoto(photo);
+                    if (inp == 1) {
+                        while (true) {
+                            ownerEntity obj = new ownerEntity();
+                            System.out.println("___________________Housing___________________");
+                            System.out.println("1-Add Housing ");
+                            System.out.println("2-Show Housings ");
+                            System.out.println("3-Logout ");
+                            System.out.print("The Value: ");
+                            Scanner inp1 = new Scanner(System.in);
+                            int input2 = inp1.nextInt();
+                            if (input2 == 1) {
+                                Scanner inp3 = new Scanner(System.in);
+                                System.out.println("________________Add Housing________________");
+                                System.out.println("Enter Housing ID: ");
+                                obj.counter = inp3.nextLine();
+                                System.out.println("Enter Owner username: '" + in.UserName + "'");
+                                obj.addHousing(in.UserName);
+                                System.out.println("Enter Department name: ");
+                                String depName = inp3.nextLine();
+                                obj.departmentName(depName);
+                                System.out.println("Do you want to insert picture? ");
+                                String yn = inp3.nextLine();
+                                if (yn.equals("Yes")) {
+                                    System.out.println("Enter the picture: ");
+                                    String photo = inp3.nextLine();
+                                    obj.addPhoto(photo);
+                                }
+                                System.out.println("Do you want to Enter Housing Location? ");
+                                String yn2 = inp3.nextLine();
+                                if (yn2.equals("Yes")) {
+                                    System.out.println("Enter Housing Location: ");
+                                    String location = inp3.nextLine();
+                                    obj.addLocationInfo(location);
+                                }
+                                System.out.println("Do you want to Enter Housing Services? ");
+                                String yn3 = inp3.nextLine();
+                                if (yn3.equals("Yes")) {
+                                    System.out.println("Enter Housing Services:");
+                                    String services = inp3.nextLine();
+                                    obj.addServices(services);
+                                }
+                                System.out.println("Do you want to Enter Rent price? ");
+                                String yn4 = inp3.nextLine();
+                                if (yn4.equals("Yes")) {
+                                    System.out.println("Enter Rent price: ");
+                                    String price = inp3.nextLine();
+                                    obj.addPrice(price);
+                                }
                             }
-                            System.out.println("Do you want to Enter Housing Location? ");
-                            String yn2 = inp3.nextLine();
-                            if (yn2.equals("Yes")) {
-                                System.out.println("Enter Housing Location: ");
-                                String location = inp3.nextLine();
-                                obj.addLocationInfo(location);
-                            }
-                            System.out.println("Do you want to Enter Housing Services? ");
-                            String yn3 = inp3.nextLine();
-                            if (yn3.equals("Yes")) {
-                                System.out.println("Enter Housing Services:");
-                                String services = inp3.nextLine();
-                                obj.addServices(services);
-                            }
-                            System.out.println("Do you want to Enter Rent price? ");
-                            String yn4 = inp3.nextLine();
-                            if(yn4.equals("Yes"))
-                            {
-                                System.out.println("Enter Rent price: ");
-                                String price = inp3.nextLine();
-                                obj.addPrice(price);
-                            }
-                        }
 
-                        if(input2 == 2)
-                        {
-                            System.out.println("_______________Show Housings_______________");
-                            obj.showHousings(in.UserName);
+                            if (input2 == 2) {
+                                System.out.println("_______________Show Housings_______________");
+                                obj.showHousings(in.UserName);
+                            }
+                            if (input2 == 3)
+                                break;
                         }
-                        if(input2 == 3)
-                            break;
                     }
-                }
-                else if (role.equals("admin")) {
+                } else if (role.equals("admin")) {
+                    adminEntity obj = new adminEntity();
                     System.out.println("____________________Admin____________________");
                     System.out.println("Choose from the following ");
                     System.out.println("1-See pending Housings ");
@@ -181,21 +181,37 @@ public class SakancomApplication{
                     System.out.println("The Value:  ");
                     Scanner inp1 = new Scanner(System.in);
                     int input2 = inp1.nextInt();
-                    if(input2 == 1)
-                    {
-
-                    }
-                    if(input2 == 2)
-                    {
-
-                    }
-                    if(input2 == 3)
-                    {
-                        System.out.println("Logged out successfully");
-                        break;
+                        if (input2 == 1) {
+                            while (true) {
+                                obj.pendingHousings();
+                                System.out.println("Enter housing id: ");
+                                Scanner inp4 = new Scanner(System.in);
+                                String id = inp4.nextLine();
+                                System.out.println("Do you want to accept it? ");
+                                String acceptance = inp4.nextLine();
+                                if (acceptance.equals("Yes")) {
+                                    obj.acceptRejectHousing(id, acceptance);
+                                    System.out.println("Housing accepted! ");
+                                } else {
+                                    System.out.println("Housing Rejected! ");
+                                }
+                                break;
+                            }
+                        }
+                            if (input2 == 2) {
+                                while (true) {
+                                obj.showReservations();
+                                break;
+                            }
+                        }
+                        if (input2 == 3) {
+                            while(true) {
+                                System.out.println("Logged out successfully");
+                                break;
+                            }
+                        }
                     }
                 }
-            }
             else if (LoginOrSignUp==2) {
                 System.out.println("_____________________________________________");
                 System.out.println("Choose from the following ");

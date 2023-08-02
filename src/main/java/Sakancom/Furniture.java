@@ -8,22 +8,18 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Furniture {
-    public String ID;
-    public String UserName;
-    public String Picture;
-    public String Description;
-    public String Price;
-    public String selled;
-    String host = "localhost";
-    int port = 3306;
-    String database = "Sakancom";
-    String username = "root";
-    String password = "password";
-    String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+    String UserName,Picture,Description,Price,ID,selled;
 
     public boolean checkAvailability(String userName){
+        String host = "localhost";
+        int port = 3306;
+        String database = "Sakancom";
+        String username = "root";
+        String password = "password";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = new String();
             query = "Select * from forniture where username_tenant='"+userName+"' and Selled='No'";
@@ -32,19 +28,26 @@ public class Furniture {
             while (resultSet.next()) {
                 return true;
             }
-            return false;
+
         }
         catch (Exception e){
-            return false;
-        }
 
+        }
+        return false;
 
 
     }
-    public void displayFurniture(String userName){
+    public boolean displayFurniture(String userName){
         if(checkAvailability(userName)){
+            String host = "localhost";
+            int port = 3306;
+            String database = "Sakancom";
+            String username = "root";
+            String password = "password";
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
             int counter = 1;
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
+                System.out.println("Connected to the MySQL database!");
                 Statement statement = connection.createStatement();
                 String query = new String();
                 query = "Select * from forniture where username_tenant='"+userName+"'";
@@ -59,6 +62,9 @@ public class Furniture {
                     System.out.println("_____________________________________________");
                     counter++;
                 }
+                if(counter>1){
+                    return true;
+                }
 
             }
             catch (Exception e){
@@ -66,11 +72,19 @@ public class Furniture {
             }
 
         }
+        return false;
     }
     public boolean  addFurniture(String userName,String picture,String description,String price,String id,String selled) {
         String query = "insert into forniture (id,picture,residence_location_desc,price,username_tenant,selled) value ('" + id + "','" + picture + "','" + description + "','" + price + "','" + userName + "','" + selled + "')";
+        String host = "localhost";
+        int port = 3306;
+        String database = "Sakancom";
+        String username = "root";
+        String password = "password";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             statement.executeUpdate(query);
             return true;
@@ -85,39 +99,64 @@ public class Furniture {
     }
 
     public boolean sellFurniture(String id,String userName){
-        if(checkAvailability(userName,id)) {
+        if(checkAvailability(id,userName)) {
+            String host = "localhost";
+            int port = 3306;
+            String database = "Sakancom";
+            String username = "root";
+            String password = "password";
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
+                System.out.println("Connected to the MySQL database!");
                 Statement statement = connection.createStatement();
                 String query = "update forniture set selled='Yes' where id='" + id + "'";
                 statement.executeUpdate(query);
+
                 return true;
             } catch (Exception e) {
 
             }
         }
-        else {
-            return false;
-        }
+
+
         return false;
     }
 
     public boolean checkAvailability(String userName,String id){
+        String host = "localhost";
+        int port = 3306;
+        String database = "Sakancom";
+        String username = "root";
+        String password = "password";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         int counter = 1;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Connected to the MySQL database!");
             Statement statement = connection.createStatement();
             String query = new String();
             query = "Select * from forniture where username_tenant='"+userName+"' and selled='No' and id='"+id+"'";
+            System.out.println(query);
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
+                counter++;
+
+
+            }
+            if(counter>1){
                 return true;
             }
-            return false;
+            System.out.println("after while");
+
+
         }
         catch (Exception e){
-            return false;
-        }
 
+        }
+        System.out.println("before false");
+
+        return false;
 
 
     }

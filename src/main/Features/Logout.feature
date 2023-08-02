@@ -13,5 +13,5 @@ Feature: admin, tenant or owner logging out.
 
   Scenario: tenant wants to logout
     Given tenant is logged in
-    And  selected "2" from tenant dashboard
+    And  selected "4" from tenant dashboard
     Then tenant logged out successfully
