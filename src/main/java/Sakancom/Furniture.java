@@ -1,6 +1,5 @@
 package Sakancom;
 
-import io.cucumber.java.an.E;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Furniture {
-    String UserName,Picture,Description,Price,ID,selled;
+    String Picture,Description,Price,ID,selled;
 
     public boolean checkAvailability(String userName){
         String host = "localhost";

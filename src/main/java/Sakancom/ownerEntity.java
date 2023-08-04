@@ -113,6 +113,7 @@ public class ownerEntity {
                 System.out.print(resultSet.getString(3));
                 System.out.println("Owner email : " + resultSet.getString(6));
                 System.out.println("Owner Phone number : " + resultSet.getString(5));
+                return true;
             }
         } catch (SQLException e){throw new RuntimeException(e);}return false;
     }

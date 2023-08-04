@@ -82,17 +82,17 @@ public class adminEntity {
                 System.out.println("House ID : " +resultSet.getString("houseID"));
                 System.out.println("tenant : " +resultSet.getString("tenantUserName"));
                 System.out.println("Owner : " +resultSet.getString("Owner")+"\n");
-                System.out.println("Tenant information");
-                String Query3 = "SELECT * from tenant where username = '"+tenant+"'";
-                ResultSet resultSet3= statement.executeQuery(Query3);
-                while(resultSet3.next()) {
-                    System.out.println("Name : " + resultSet3.getString(1) + " " + resultSet3.getString(2) + " " + resultSet3.getString(3));
-                    System.out.println("Phone Number : " + resultSet3.getString(4));
-                    System.out.println("Email : " + resultSet3.getString(5));
-                    System.out.println("Age : " + resultSet3.getString(6));
-                    System.out.println("Registration Number : " + resultSet3.getString(7));
-                    System.out.println("Major : " + resultSet3.getString(8)+"\n");
-                }
+            }
+            System.out.println("Tenant information");
+            String Query3 = "SELECT * from tenant where username = '"+tenant+"'";
+            ResultSet resultSet3= statement.executeQuery(Query3);
+            while(resultSet3.next()) {
+                System.out.println("Name : " + resultSet3.getString(1) + " " + resultSet3.getString(2) + " " + resultSet3.getString(3));
+                System.out.println("Phone Number : " + resultSet3.getString(4));
+                System.out.println("Email : " + resultSet3.getString(5));
+                System.out.println("Age : " + resultSet3.getString(6));
+                System.out.println("Registration Number : " + resultSet3.getString(7));
+                System.out.println("Major : " + resultSet3.getString(8)+"\n");
             }
             String Query2 = "SELECT * from Owner where username = '"+owner+"'";
             ResultSet resultSet2= statement.executeQuery(Query2);
